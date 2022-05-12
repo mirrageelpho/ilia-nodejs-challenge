@@ -1,0 +1,27 @@
+version: '2.1'
+services:
+  node-docker-teste:
+    image: nodejs-ts-transactions
+    container_name: TRANSACTIONS_SERVICE
+    build: .
+    volumes:
+      - .:/transactions-service
+      - node_modules:/transactions-service/node_modules
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - "3001:80"
+    env_file: .env
+
+  db:
+    image: mongo:5.0
+    container_name: MONGODB_SERVICE
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db
+
+volumes:
+  node_modules: {}
