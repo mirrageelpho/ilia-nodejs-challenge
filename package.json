@@ -9,7 +9,8 @@
     "dev": "npx nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
     "lint": "eslint ./src ./test --ext .ts",
     "lint:fix": "eslint ./src ./test --ext .ts --fix",
-    "test": "test"
+    "test:functional": "jest --projects ./test --runInBand --watchAll",
+    "test:charge": "npx autocannon -c 500 -d 30 --workers 10 --renderStatusCodes --latency --warmup [ -c 1 -d 2 ] localhost:3000"
   },
   "repository": {
     "type": "git",
@@ -34,13 +35,19 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "@types/jest": "^27.5.1",
     "@types/module-alias": "^2.0.1",
     "@types/node": "^17.0.32",
+    "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
+    "autocannon": "^7.9.0",
     "eslint": "^8.15.0",
+    "jest": "^28.1.0",
     "module-alias": "^2.2.2",
     "nodemon": "^2.0.16",
+    "supertest": "^6.2.3",
+    "ts-jest": "^28.0.2",
     "ts-node": "^10.7.0"
   }
 }
