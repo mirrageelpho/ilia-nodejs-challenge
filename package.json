@@ -1,0 +1,42 @@
+{
+  "name": "ilia-nodejs-challenge",
+  "version": "1.0.0",
+  "description": "microservice to storage user transactions",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && dist/src/index.js",
+    "dev": "npm run build && nodemon dist/src/index.js",
+    "lint": "eslint ./src ./test --ext .ts",
+    "lint:fix": "eslint ./src ./test --ext .ts --fix",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mirrageelpho/ilia-nodejs-challenge.git"
+  },
+  "keywords": [
+    "node.js",
+    "typescript",
+    "mongodb",
+    "docker"
+  ],
+  "author": "Aécio Cleber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mirrageelpho/ilia-nodejs-challenge/issues"
+  },
+  "homepage": "https://github.com/mirrageelpho/ilia-nodejs-challenge#readme",
+  "dependencies": {
+    "typescript": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/module-alias": "^2.0.1",
+    "@types/node": "^17.0.32",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "eslint": "^8.15.0",
+    "module-alias": "^2.2.2",
+    "nodemon": "^2.0.16"
+  }
+}
