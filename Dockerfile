@@ -14,4 +14,4 @@ USER node
 
 
 CMD npm run dev
-CMD npm run test:functional
+#CMD npm run test:functional
