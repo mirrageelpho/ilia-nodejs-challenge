@@ -7,10 +7,10 @@ const Routes = express.Router()
 
 const controller = transactions()
 
-
-
 Routes.use('/api-docs', swagger.serve);
 Routes.get('/api-docs', swagger.setup(swaggerDocument));
 Routes.get('/balance', controller.getBalance)
+Routes.get('/transactions', controller.getTransaction)
+Routes.post('/transactions', controller.postTransaction)
 
 export default Routes
